@@ -1,0 +1,223 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+  background: radial-gradient(circle at 20% 20%, #4c63ff 0%, #2c328d 35%, #111827 100%);
+  color: #f9fafb;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Header Container */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 40px;
+  background: #1e293b;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Left Section */
+.app-header-left {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+/* Logo */
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+/* Links */
+.app-header a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+.app-header a:hover {
+  color: #38bdf8;
+}
+
+/* Right Section */
+.app-header-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* Username */
+.header-username {
+  font-size: 14px;
+  color: #e2e8f0;
+}
+
+/* Admin CTA Button */
+.header-cta {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background: #22c55e;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.header-cta:hover {
+  background: #16a34a;
+}
+
+/* Logout Button */
+.header-logout {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background: #ef4444;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.header-logout:hover {
+  background: #dc2626;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .app-header-left {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .app-header-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+.admin-container {
+  width: min(900px, 95vw);
+  margin: 2rem auto;
+  background: rgba(15, 23, 42, 0.92);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 1rem;
+}
+
+.admin-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.admin-hotels-list ul {
+  margin: 0.5rem 0 1rem;
+  padding-left: 1.2rem;
+}
+
+.admin-hotels-list li {
+  margin-bottom: 0.2rem;
+}
+
+.page-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.auth-container h2 {
+  margin: 0 0 1rem;
+  text-align: center;
+  font-size: 1.9rem;
+  letter-spacing: 0.6px;
+  color: #f8fafc;
+}
+
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: #f8fafc;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-container input:focus {
+  outline: none;
+  border-color: #cbd5e1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+}
+
+.auth-container button {
+  margin-top: 0.2rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(125deg, #4f46e5 0%, #6366f1 100%);
+  color: white;
+  font-weight: 600;
+  padding: 0.85rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.auth-container button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(79, 70, 229, 0.35);
+}
+
+.auth-container .links {
+  margin-top: 0.8rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
+
+.auth-container .links a {
+  color: #8b5cf6;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-container .links a:hover {
+  text-decoration: underline;
+}
+
+.page-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
