@@ -25,11 +25,8 @@ const AdminDashboard = () => {
     }, []);
 
     const fetchHotels = async () => {
-
-        const data = await getHotels();
-
-        setHotels(data.data);
-
+        const hotelsData = await getHotels();
+        setHotels(hotelsData);
     };
 
     const handleHotelSubmit = async (e: any) => {
@@ -76,7 +73,7 @@ const AdminDashboard = () => {
                     <h2>Admin Dashboard</h2>
                     <p>All hotels are listed below. Add new hotels and rooms anytime.</p>
                 </div>
-                <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>Add More Hotels</button>
+
             </div>
 
             <div className="admin-hotels-list">

@@ -25,8 +25,21 @@ app.use(express.urlencoded({ extended: true }));
 
 /* -------------------- DATABASE -------------------- */
 
-connectDB();
-connectRedis();
+// Initialize databases and services before starting the server
+const start = async () => {
+    try {
+        await connectDB();
+        await connectRedis();
+        app.listen(PORT, () => {
+            console.log(`🚀 Server running on http://localhost:${PORT}`);
+        });
+    } catch (err) {
+        console.error("Failed to start server:", err);
+        process.exit(1);
+    }
+};
+
+start();
 
 /* -------------------- HEALTH CHECK -------------------- */
 
@@ -50,6 +63,4 @@ app.use(errorMiddleware);
 
 /* -------------------- SERVER -------------------- */
 
-app.listen(PORT, () => {
-    console.log(`🚀 Server running on http://localhost:${PORT}`);
-});
+// server is started in `start()` after DB and Redis connect
