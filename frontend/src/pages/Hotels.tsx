@@ -21,22 +21,24 @@ const Hotels = () => {
     }, []);
 
     const fetchHotels = async () => {
-        const data = await getHotels();
-        setHotels(data);
+        const hotelsData = await getHotels();
+        setHotels(hotelsData);
     };
 
     return (
-        <div>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.8rem" }}>
-                <h2>Available Hotels</h2>
+        <div className="hotels-page">
+            <div className="hotels-header">
+                <h2 className="title">Available Hotels</h2>
+
                 {isAdmin && (
                     <Link to="/admin">
-                        <button style={{ borderRadius: 8, background: "#4f46e5", color: "white", border: "none", padding: "0.5rem 0.8rem" }}>
-                            Add More Hotels
+                        <button className="add-btn">
+                            + Add Hotel
                         </button>
                     </Link>
                 )}
             </div>
+
             <div className="hotel-grid">
                 {hotels.map((hotel) => (
                     <HotelCard key={hotel._id} hotel={hotel} />

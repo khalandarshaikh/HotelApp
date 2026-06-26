@@ -207,6 +207,102 @@ body {
   padding-left: 20px;
 }
 
+
+/* ================= HOTELS PAGE ================= */
+/* Page background */
+.hotels-page {
+  min-height: 100vh;
+  padding: 2rem 3rem;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Header */
+.hotels-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+/* Title */
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  letter-spacing: 0.5px;
+}
+
+/* Button */
+.add-btn {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.3rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Button hover */
+.add-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+}
+
+/* Grid */
+.hotel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Optional: Animate cards */
+.hotel-grid>* {
+  animation: fadeUp 0.5s ease forwards;
+  opacity: 0;
+}
+
+/* Stagger animation */
+.hotel-grid>*:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.hotel-grid>*:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.hotel-grid>*:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.hotel-grid>*:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* Animation keyframes */
+@keyframes fadeUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Empty state */
+.no-hotels {
+  text-align: center;
+  margin-top: 3rem;
+  color: #64748b;
+  font-size: 1.1rem;
+}
+
 /* ================= HOTEL DETAILS PAGE ================= */
 
 .hotel-details-container {

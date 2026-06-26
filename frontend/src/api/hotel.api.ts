@@ -18,7 +18,9 @@ export const createHotel = async (data: any) => {
 
 export const getHotels = async () => {
     const res = await axios.get(API);
-    return res.data;
+    return Array.isArray(res.data)
+        ? res.data
+        : res.data?.data ?? [];
 };
 
 export const getHotelById = async (id: string) => {

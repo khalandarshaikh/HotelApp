@@ -25,18 +25,20 @@ export const getHotels = async (req: Request, res: Response) => {
 
         if (cache) {
             console.log("Serving from Redis cache");
-            return res.json(JSON.parse(cache));
+            const parsed = JSON.parse(cache);
+            return res.json(Array.isArray(parsed) ? { success: true, data: parsed } : parsed);
         }
 
         const hotels = await getHotelsService();
-        await redisClient.set("hotels", JSON.stringify(hotels), {
+        const payload = {
+            success: true,
+            data: hotels
+        };
+        await redisClient.set("hotels", JSON.stringify(payload), {
             EX: 120
         });
         console.log("Serving from MongoDB");
-        res.json({
-            success: true,
-            data: hotels
-        });
+        res.json(payload);
     } catch (error: any) {
         res.status(500).json({ message: error.message });
     }
