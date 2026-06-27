@@ -33,9 +33,14 @@ const AdminDashboard = () => {
 
         e.preventDefault();
 
+        if (!hotelName.trim() || !city.trim()) {
+            alert("Please provide both hotel name and city.");
+            return;
+        }
+
         await createHotel({
             name: hotelName,
-            location: city
+            city
         });
 
         alert("Hotel created");

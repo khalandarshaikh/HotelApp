@@ -16,11 +16,15 @@ const Header = () => {
     return (
         <header className="app-header">
             <div className="app-header-left">
-                <Link to="/hotels" className="logo">Hotel App</Link>
+                <Link to="/hotels" className="logo">Hotelzon</Link>
                 {token && (
                     <>
                         <Link to="/hotels">Hotels</Link>
-                        {isAdmin && <Link to="/admin">Admin Dashboard</Link>}
+                        {isAdmin ? (
+                            <Link to="/admin">Admin Dashboard</Link>
+                        ) : (
+                            <Link to="/my-bookings">My Bookings</Link>
+                        )}
                     </>
                 )}
             </div>

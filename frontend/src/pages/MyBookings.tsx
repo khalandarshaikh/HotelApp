@@ -27,7 +27,7 @@ const MyBookings = () => {
     };
 
     return (
-        <div>
+        <div className="bookings-page">
             <h2>My Bookings</h2>
             {bookings.length === 0 ? (
                 <p>No bookings yet.</p>
