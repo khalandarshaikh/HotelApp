@@ -39,7 +39,7 @@ const Booking = () => {
     };
 
     return (
-        <div>
+        <div className="booking-page">
             <h2>Book Room</h2>
             <form onSubmit={handleSubmit}>
                 <input

@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 export interface IHotel extends mongoose.Document {
     name: string;
-    location: string;
+    city: string;
 }
 
 const hotelSchema = new mongoose.Schema<IHotel>(
@@ -11,7 +11,7 @@ const hotelSchema = new mongoose.Schema<IHotel>(
             type: String,
             required: true
         },
-        location: {
+        city: {
             type: String,
             required: true
         }

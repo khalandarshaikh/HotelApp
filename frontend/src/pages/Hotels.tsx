@@ -7,8 +7,7 @@ import { AuthContext } from "../context/AuthContext";
 interface Hotel {
     _id: string;
     name: string;
-    city: string;
-    price: number;
+    city: string
 }
 
 const Hotels = () => {

@@ -5,8 +5,9 @@ import RoomCard from "../components/RoomCard";
 
 interface Room {
     _id: string;
-    name: string;
+    roomNumber: string;
     price: number;
+    capacity: number;
 }
 
 const Rooms = () => {
@@ -28,13 +29,15 @@ const Rooms = () => {
 
     return (
 
-        <div>
+        <div className="rooms-page">
 
             <h2>Available Rooms</h2>
 
-            {rooms.map((room) => (
-                <RoomCard key={room._id} room={room} />
-            ))}
+            <div className="room-grid">
+                {rooms.map((room) => (
+                    <RoomCard key={room._id} room={room} />
+                ))}
+            </div>
 
         </div>
 
